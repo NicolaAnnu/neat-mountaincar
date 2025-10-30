@@ -1,4 +1,4 @@
-# 🧠 NEAT Evolution on MountainCar-v0
+# NEAT Evolution on MountainCar-v0
 
 ## Project Description
 
@@ -48,7 +48,7 @@ Make sure you have installed:
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/neat-mountaincar.git
+git clone https://github.com/NicolaAnnu/neat-mountaincar.git
 cd neat-mountaincar
 ```
 
@@ -67,13 +67,13 @@ Run the training with different population sizes:
 
 ```bash
 # Population size: 50
-python train.py --config config_50.txt --generations 100
+python mountain.py --config config.txt --generations 100
 
 # Population size: 200
-python train.py --config config_200.txt --generations 100
+python mountainwith200popsize.py --config config_200.txt --generations 80
 ```
 
-**Output files:** `best_genome_50.pkl`, `best_genome_200.pkl`
+**Output files:** `fitness.png`, `fitnesswith200.png`
 
 ### Evaluation
 
@@ -87,10 +87,6 @@ python evaluate.py --genome best_genome_200.pkl --config config_200.txt --episod
 
 Generate fitness plots, species evolution, and network topology diagrams:
 
-```bash
-python visualize.py --stats fitness_stats.pkl
-```
-
 **Generates:**
 - Best and mean fitness plots
 - Species evolution over generations
@@ -100,25 +96,11 @@ python visualize.py --stats fitness_stats.pkl
 
 ## NEAT Configuration
 
-**Main Parameters:**
-- `fitness_criterion`: max
-- `fitness_threshold`: -110
-- `pop_size`: 50 or 200
-- `reset_on_extinction`: False
-- `no_fitness_termination`: False
-
 **Configuration files:**
-- `config_50.txt` – for population size 50
-- `config_200.txt` – for population size 200
+- `config.txt` – for population size 50
+- `config-pop-size-200.txt` – for population size 200
 
 ---
-
-## Main Results
-
-| Experiment | Population | Generations | Best Fitness | Success Rate | Behavior |
-|------------|------------|-------------|--------------|--------------|----------|
-| **Test 1** | 50 | 100 | -110 | Moderate | Unstable evolution, long stagnation periods, sporadic improvements |
-| **Test 2** | 200 | 100 | -100 | High | Faster improvement, consistent and stable evolution |
 
 **Fitness Evolution - Population 50:**
 ![Fitness with 200 population](./images/fitness.png)
@@ -127,6 +109,8 @@ python visualize.py --stats fitness_stats.pkl
 ![Fitness with 50 population](./images/fitnesswith200popsize.png)
 
 ---
+## NEAT Agent Solving MountainCar-v0
+![Goal Reached](./resultmountaincar/mountaincar.gif)
 
 ## NEAT Process
 
