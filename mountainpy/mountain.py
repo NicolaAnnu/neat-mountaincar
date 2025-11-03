@@ -67,7 +67,7 @@ plt.ylabel("Fitness")
 plt.title("Fitness per Generation (MountainCar-v0)")
 plt.legend()
 plt.tight_layout()
-plt.savefig("images/fitness.png")
+# plt.savefig("images/fitness.png")
 plt.show()
 
 print("\nBest genome:\n{!s}".format(winner))
